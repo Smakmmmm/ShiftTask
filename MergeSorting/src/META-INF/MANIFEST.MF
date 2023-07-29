@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: ru.makhmedov.merge_sorting.main.Main
+

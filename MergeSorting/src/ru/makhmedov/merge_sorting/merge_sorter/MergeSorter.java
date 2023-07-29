@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MergeSorter {                  //TODO СДЕЛАТЬ ПРОВЕРКУ НА ПРАВИЛЬНОСТЬ ИСХОДНЫХ ФАЙЛОВ.
+public class MergeSorter {
     private final Iterator iterator;
     private final Map<Reader, String> currentStrings = new HashMap<>();
     private final Writer fileWriter;
@@ -44,18 +44,18 @@ public class MergeSorter {                  //TODO СДЕЛАТЬ ПРОВЕРК
         while (!currentStrings.isEmpty()) {
             Map.Entry<Reader, String> sortedValue = iterator.compare(currentStrings);
 
-            if (sortedValue.getValue() == null) {       //ТУТ МЫ ПРОВЕРЯЕМ ЕСЛИ НАЛЛ, ТО МЕНЯЕМ НА СЛЕДУЮЩУЮ СТРОКУ.
+            if (sortedValue.getValue() == null) {
                 currentStrings.remove(sortedValue.getKey());
 
-                if (!sortedValue.getKey().isFileFinished()) {       //ТУТ ЕСЛИ ФАЙЛ НЕ ЗАКОНЧИЛСЯ, ТО ИЩЕМ ТУ САМУЮ СЛЕДУЮЩУЮ СТРОКУ.
+                if (!sortedValue.getKey().isFileFinished()) {
                     currentStrings.put(sortedValue.getKey(), iterator.readValue(sortedValue.getKey()));
-                    continue;                               //ЕСЛИ НАШЛИ, ТО ПО НОВОЙ В КОМПАРАТОР ЗАКИДЫВАЕМ, ЕСЛИ НЕТ ИДЕМ ДАЛЬШЕ
+                    continue;
                 }
 
                 continue;
             }
 
-            if (!sortedValue.getKey().isFileFinished()) { //ЕСЛИ НЕ НАЛЛ, И ФАЙЛ НЕ ЗАКОНЧИЛСЯ, ТО МЕНЯЕМ НА СЛЕДУЮЩУЮ СТРОКУ.
+            if (!sortedValue.getKey().isFileFinished()) {
                 currentStrings.put(sortedValue.getKey(), iterator.readValue(sortedValue.getKey()));
             } else {
                 currentStrings.remove(sortedValue.getKey());

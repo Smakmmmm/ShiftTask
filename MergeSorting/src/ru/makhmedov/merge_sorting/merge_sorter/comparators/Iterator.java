@@ -87,7 +87,7 @@ public class Iterator {
 
             comparedValue.setValue(null);
 
-            return comparedValue;  //TODO В СОРТЕРЕ СДЕЛАТЬ ПРОВЕРКУ НА НАЛЛ - СДЕЛАЛ
+            return comparedValue;
         }
     }
 

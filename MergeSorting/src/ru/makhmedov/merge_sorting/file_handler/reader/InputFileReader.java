@@ -34,7 +34,7 @@ public class InputFileReader implements Reader {
     public boolean isFileFinished() {
         return isFileFinished;
     }
-                                                    //TODO СДЕЛАТЬ ПРОВЕРКУ НА ПРОБЕЛЫ ПОСЛЕ ЧТЕНИЯ. - СДЕЛАЛ.
+
     @Override
     public String readString() {
         if (currentString == null) {
