@@ -19,7 +19,7 @@ public class MergeSorter {
         fileWriter = iterator.getOutputFileWriter();
         List<Reader> readerList = new ArrayList<>(iterator.getInputFileList());
 
-        for (Reader reader: readerList) {
+        for (Reader reader : readerList) {
             String valueString = iterator.readValue(reader);
 
             if (!valueString.isEmpty()) {

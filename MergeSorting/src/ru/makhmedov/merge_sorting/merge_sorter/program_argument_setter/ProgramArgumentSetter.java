@@ -14,7 +14,6 @@ public class ProgramArgumentSetter {
     private int argIndex = 0;
     private boolean isAscendingOrder = false;
     private boolean isStringType = false;
-
     private Writer outputFileWriter;
 
     private final List<Reader> inputFilesList = new ArrayList<>();
